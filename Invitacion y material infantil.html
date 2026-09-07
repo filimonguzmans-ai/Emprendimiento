@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitacion y material infantil - Felices Comienzos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR CON BOTÓN PARA VOLVER AL INICIO -->
+    <div class="barra-superior">
+        <div class="contenedor-navegacion">
+            <a href="index.html" class="btn-volver">⬅ Volver al Inicio</a>
+            <span class="titulo-pagina-actual">Categoría: Álbumes</span>
+        </div>
+    </div>
+
+    <!-- CABECERA -->
+    <header class="header-portada">
+        <img src="img/logo-portada.jpg" alt="Felices Comienzos" class="logo-portada">
+    </header>
+
+    <!-- CONTENIDO DE PRODUCTOS DE ESTA CATEGORÍA -->
+    <main class="catalogo">
+        <h2>Nuestros Productos en Álbumes</h2>
+        
+        <div class="grid-productos-categoria">
+            
+            <!-- Producto 1 (Con Carrusel, flechas y temporizador a 5s) -->
+            <div class="tarjeta-producto">
+                <div class="contenedor-carrusel">
+                    <button class="flecha flecha-izq" onclick="moverCarrusel(this, -1)">&#10094;</button>
+                    <div class="carrusel-imagenes">
+                        <img src="img/Album Personalizado-1.jpg" alt="Álbum Vista 1">
+                        <img src="img/Album Personalizado-2.jpg" alt="Álbum Vista 2">
+                        <img src="img/Album Personalizado-3.jpg" alt="Álbum Vista 3">
+                    </div>
+                    <button class="flecha flecha-der" onclick="moverCarrusel(this, 1)">&#10095;</button>
+                </div>
+
+                <h3>Álbum Deluxe Personalizado</h3>
+                <p class="precio">$Bs. 250.00</p>
+                
+                <!-- Formulario de pedido e integración con WhatsApp para el QR -->
+                <div class="form-pedido">
+                    <input type="text" id="nombre1" placeholder="Tu Nombre" class="input-dato">
+                    <input type="text" id="direccion1" placeholder="Dirección / Zona" class="input-dato">
+                    <input type="text" id="ciudad1" placeholder="Ciudad (Ej. La Paz, El Alto)" class="input-dato">
+                    <button onclick="enviarPedido('Álbum Deluxe Personalizado', '250.00', '1')" class="btn-whatsapp">
+                        Reservar y Pedir QR por WhatsApp
+                    </button>
+                </div>
+            </div>
+
+            <!-- Puedes agregar más productos aquí si lo deseas -->
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Felices Comienzos © 2026</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Cambio automático del carrusel cada 5 segundos
+        setInterval(() => {
+            const carruseles = document.querySelectorAll('.carrusel-imagenes');
+            carruseles.forEach(carrusel => {
+                const anchoImagen = carrusel.clientWidth;
+                if (carrusel.scrollLeft + carrusel.clientWidth >= carrusel.scrollWidth - 10) {
+                    carrusel.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    carrusel.scrollBy({ left: anchoImagen, behavior: 'smooth' });
+                }
+            });
+        }, 5000);
+
+        // Mover carrusel con flechas
+        function moverCarrusel(boton, direccion) {
+            const contenedor = boton.parentElement.querySelector('.carrusel-imagenes');
+            const anchoImagen = contenedor.clientWidth;
+            contenedor.scrollBy({ left: anchoImagen * direccion, behavior: 'smooth' });
+        }
+
+        // Enviar pedido y solicitar QR a WhatsApp
+        function enviarPedido(producto, precio, id) {
+            let nombre = document.getElementById('nombre' + id).value;
+            let direccion = document.getElementById('direccion' + id).value;
+            let ciudad = document.getElementById('ciudad' + id).value;
+
+            if (nombre === "" || direccion === "" || ciudad === "") {
+                alert("Por favor, llena tu nombre, dirección y ciudad antes de realizar la reserva.");
+                return;
+            }
+
+            let numeroWhatsApp = "59177219018"; 
+
+            let mensaje = `Hola! Deseo realizar una reserva:%0A%0A` +
+                          `🛍️ *Producto:* ${producto}%0A` +
+                          `💰 *Precio:* $Bs. ${precio}%0A%0A` +
+                          `👤 *Nombre:* ${nombre}%0A` +
+                          `📍 *Dirección:* ${direccion}%0A` +
+                          `🏙️ *Ciudad:* ${ciudad}%0A%0A` +
+                          `Quedo a la espera de su código QR para realizar el pago y enviar el comprobante.`;
+
+            window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
+        }
+    </script>
+</body>
+</html>

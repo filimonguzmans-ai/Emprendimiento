@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felices Comienzos - Catálogo Oficial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BARRA DE BÚSQUEDA SUPERIOR -->
+    <div class="barra-superior">
+        <div class="contenedor-buscador">
+            <input type="text" id="buscador" placeholder="Buscar categorías..." onkeyup="filtrarCategorias()">
+            <button class="btn-buscar">🔍</button>
+        </div>
+    </div>
+
+    <!-- CABECERA CON LOGO Y DESCRIPCIÓN INTEGRADA SIN CAJAS OSCURAS -->
+    <header class="header-portada">
+        <img src="img/logo-portada.jpg" alt="Felices Comienzos" class="logo-portada">
+        <div class="descripcion-tienda">
+            <p>✨ ¡Bienvenidos a Felices Comienzos! Encuentra detalles únicos y personalizados para cada ocasión especial. Selecciona una categoría para ver los productos disponibles. ✨</p>
+        </div>
+    </header>
+
+    <!-- CONTENEDOR DE CATEGORÍAS PRINCIPALES -->
+    <main class="contenedor-categorias-home">
+        <h2>Nuestras Categorías</h2>
+        
+        <div class="grid-categorias-home" id="gridCategorias">
+            
+            <!-- Álbumes -->
+            <a href="Albumes.html" class="tarjeta-cat-home">
+                <img src="img/cat-albumes.jpg" alt="Álbumes">
+                <h3>Álbumes</h3>
+            </a>
+
+            <!-- Invitación y material infantil -->
+            <a href="Invitacion y material infantil.html" class="tarjeta-cat-home">
+                <img src="img/cat-infantiles.jpg" alt="Invitación y material infantil">
+                <h3>Invitación y material infantil</h3>
+            </a>
+
+            <!-- Cuadros Personalizados en MDF y Resina -->
+            <a href="Cuadros Personalizados en MDF y Resina.html" class="tarjeta-cat-home">
+                <img src="img/cat-resina.jpg" alt="Cuadros Personalizados en MDF y Resina">
+                <h3>Cuadros Personalizados en MDF y Resina</h3>
+            </a>
+
+            <!-- Invitaciones de Boda y 15 años -->
+            <a href="Invitaciones de Boda y 15 años.html" class="tarjeta-cat-home">
+                <img src="img/cat-boda.jpg" alt="Invitaciones de Boda y 15 años">
+                <h3>Invitaciones de Boda y 15 años</h3>
+            </a>
+
+            <!-- Fotos imantadas y Polaroid -->
+            <a href="Fotos imantadas y Polaroid.html" class="tarjeta-cat-home">
+                <img src="img/cat-polaroid.jpg" alt="Fotos imantadas y Polaroid">
+                <h3>Fotos imantadas y Polaroid</h3>
+            </a>
+
+            <!-- Calendarios -->
+            <a href="Calendarios.html" class="tarjeta-cat-home">
+                <img src="img/cat-calendarios.jpg" alt="Calendarios">
+                <h3>Calendarios</h3>
+            </a>
+
+            <!-- Juego uno y cartas personalizadas -->
+            <a href="juego uno y cartas personalizadas.html" class="tarjeta-cat-home">
+                <img src="img/cat-uno.jpg" alt="Juego uno y cartas personalizadas">
+                <h3>Juego uno y cartas personalizadas</h3>
+            </a>
+
+            <!-- Stickers -->
+            <a href="stickers.html" class="tarjeta-cat-home">
+                <img src="img/cat-stickers.jpg" alt="Stickers">
+                <h3>Stickers</h3>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- BANNER INFERIOR DE BENEFICIOS -->
+    <section class="banner-beneficios">
+        <div class="beneficio">🚚 Envíos seguros a todo Bolivia</div>
+        <div class="beneficio">🔒 Pago Seguro por QR</div>
+        <div class="beneficio">⭐ Calidad Garantizada</div>
+    </section>
+
+    <footer>
+        <p>Felices Comienzos © 2026 - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        // Buscador interactivo para filtrar categorías en tiempo real
+        function filtrarCategorias() {
+            let texto = document.getElementById('buscador').value.toLowerCase();
+            let tarjetas = document.querySelectorAll('.tarjeta-cat-home');
+            
+            tarjetas.forEach(tarjeta => {
+                let titulo = tarjeta.querySelector('h3').textContent.toLowerCase();
+                if (titulo.includes(texto)) {
+                    tarjeta.style.display = "flex";
+                } else {
+                    tarjeta.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

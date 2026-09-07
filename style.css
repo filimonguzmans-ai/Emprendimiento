@@ -1,0 +1,474 @@
+/* Fondo general de la página en tono marfil/crema elegante */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdfbf7;
+    color: #333;
+    text-align: center;
+}
+
+/* Barra de búsqueda superior */
+.barra-superior {
+    background-color: #2b3a4a;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-buscador {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+}
+
+#buscador {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px 0 0 6px;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.btn-buscar {
+    background-color: #7c5295;
+    border: none;
+    padding: 0 18px;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    color: white;
+}
+
+/* Cabecera con logo a ancho completo sin fondos oscuros */
+.header-portada {
+    background-color: #fdfbf7;
+    padding: 0;
+    text-align: center;
+}
+
+.logo-portada {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+}
+
+/* Descripción de la tienda limpia sin recuadros grises o negros */
+.descripcion-tienda {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: transparent;
+    color: #4a5568;
+    padding: 10px 15px;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* Catálogo de productos (Páginas internas) */
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 2rem;
+}
+
+.tarjeta-producto {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    width: 250px;
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #f0e6df;
+}
+
+.tarjeta-producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.precio {
+    font-weight: bold;
+    color: #27ae60;
+    font-size: 1.2rem;
+}
+
+.btn-whatsapp {
+    display: block;
+    background-color: #25d366;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5d;
+}
+
+/* Carrusel de imágenes */
+.carrusel-imagenes {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    width: 100%;
+    height: 200px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    scrollbar-width: none;
+}
+
+.carrusel-imagenes::-webkit-scrollbar {
+    display: none;
+}
+
+.carrusel-imagenes img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scroll-snap-align: start;
+    border-radius: 4px;
+}
+
+.contenedor-carrusel {
+    position: relative;
+    width: 100%;
+}
+
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.flecha:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.flecha-izq {
+    left: 10px;
+}
+
+.flecha-der {
+    right: 10px;
+}
+
+/* Cuadrícula de la página principal (Home) */
+.contenedor-categorias-home {
+    max-width: 1200px;
+    margin: 20px auto 40px auto;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.contenedor-categorias-home h2 {
+    color: #2b3a4a;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.grid-categorias-home {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.tarjeta-cat-home {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    text-decoration: none;
+    color: #2b3a4a;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f0e6df;
+}
+
+.tarjeta-cat-home:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(124, 82, 149, 0.15);
+    border-color: #d8c2e6;
+}
+
+.tarjeta-cat-home img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.tarjeta-cat-home h3 {
+    padding: 18px;
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Barra de navegación interna en páginas de categoría */
+.contenedor-navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.btn-volver {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.titulo-pagina-actual {
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Banner inferior de beneficios */
+.banner-beneficios {
+    background-color: #f3ece4;
+    display: flex;
+    justify-content: space-around;
+    padding: 22px;
+    text-align: center;
+    font-weight: 600;
+    color: #5c4b43;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-top: 1px solid #e7dcd2;
+    border-bottom: 1px solid #e7dcd2;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #718096;
+    font-size: 0.9rem;
+    background-color: #fdfbf7;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 768px) {
+    .layout-principal {
+        flex-direction: column;
+    }
+}
+/* Título de la categoría centrado arriba */
+.titulo-categoria-centrado {
+    text-align: center;
+    color: #2b3a4a;
+    font-size: 2rem;
+    margin: 30px 0 40px 0;
+    font-weight: 600;
+}
+
+.catalogo-categoria {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px 50px 20px;
+}
+
+.contenedor-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Tarjeta de producto horizontal (Foto izq / Info der) */
+.tarjeta-producto-horizontal {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 20px;
+    border: 1px solid #f0e6df;
+    align-items: center;
+}
+
+/* Carrusel ajustado a la izquierda */
+.tarjeta-producto-horizontal .contenedor-carrusel {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+}
+
+.tarjeta-producto-horizontal .carrusel-imagenes {
+    height: 250px;
+    border-radius: 8px;
+}
+
+/* Columna derecha con información */
+.info-producto {
+    flex: 1.5;
+    min-width: 280px;
+    text-align: left;
+}
+
+.info-producto h3 {
+    margin-top: 0;
+    color: #2b3a4a;
+    font-size: 1.4rem;
+}
+
+.descripcion-corta {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.selector-cantidad {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.input-cantidad {
+    width: 60px;
+    padding: 6px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Botón principal de reserva */
+.btn-reservar {
+    background-color: #7c5295;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.btn-reservar:hover {
+    background-color: #6a4481;
+}
+
+/* Estilos de la ventana flotante (Modal del Formulario) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-contenido {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: left;
+}
+
+.btn-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.btn-cerrar:hover {
+    color: #000;
+}
+
+.avisos-reserva {
+    background-color: #fdf6ec;
+    border-left: 4px solid #ed8936;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+    color: #744210;
+    border-radius: 0 6px 6px 0;
+}
+
+.avisos-reserva p {
+    margin: 5px 0;
+}
+
+.form-pedido {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.input-dato {
+    padding: 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+/* Adaptabilidad para celulares pequeños */
+@media (max-width: 768px) {
+    .tarjeta-producto-horizontal {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .tarjeta-producto-horizontal .contenedor-carrusel {
+        max-width: 100%;
+    }
+}
+/* Caja informativa de entregas previas en producto */
+.aviso-entregas-previa {
+    background-color: #ebf8ff;
+    border-left: 4px solid #3182ce;
+    padding: 10px 12px;
+    margin: 12px 0;
+    font-size: 0.85rem;
+    color: #2b6cb0;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.4;
+}
+
+.aviso-entregas-previa p {
+    margin: 0;
+}
