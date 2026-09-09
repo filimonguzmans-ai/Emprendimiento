@@ -16,69 +16,108 @@
         </div>
     </div>
 
-    <!-- CABECERA CON LOGO Y DESCRIPCIÓN INTEGRADA SIN CAJAS OSCURAS -->
+    <!-- CABECERA CON LOGO A ANCHO COMPLETO -->
     <header class="header-portada">
         <img src="img/logo-portada.jpg" alt="Felices Comienzos" class="logo-portada">
-        <div class="descripcion-tienda">
-            <p>✨ ¡Bienvenidos a Felices Comienzos! Encuentra detalles únicos y personalizados para cada ocasión especial. Selecciona una categoría para ver los productos disponibles. ✨</p>
-        </div>
     </header>
 
-    <!-- CONTENEDOR DE CATEGORÍAS PRINCIPALES -->
-    <main class="contenedor-categorias-home">
-        <h2>Nuestras Categorías</h2>
+    <!-- CONTENIDO PRINCIPAL CON DISEÑO DE DOS COLUMNAS -->
+    <main class="contenedor-principal-inicio">
         
-        <div class="grid-categorias-home" id="gridCategorias">
+        <!-- COLUMNA IZQUIERDA: Tarjeta Informativa (Tienda Virtual y Puntos de Entrega) -->
+        <aside class="sidebar-info">
+            <div class="tarjeta-info-tienda">
+                <h3>🛍️ Tienda 100% Virtual</h3>
+                <p>Actualmente operamos de forma exclusiva en línea, por lo que <strong>no contamos con una tienda física</strong> abierta al público. Creamos cada detalle con dedicación y lo acercamos a ti.</p>
+                
+                <hr class="divisor-info">
+
+                <h4>📍 Puntos de Entrega Coordinada</h4>
+                <p class="sub-aviso">Entregas puntuales previa coordinación en:</p>
+                
+                <div class="zona-entrega">
+                    <span class="ciudad-tag">La Paz</span>
+                    <ul>
+                        <li>Correos Central</li>
+                        <li>Teleférico Amarillo (Sopocachi)</li>
+                        <li>Teleférico Amarillo (Curva de Holguín)</li>
+                        <li>Plaza del Estudiante</li>
+                    </ul>
+                </div>
+
+                <div class="zona-entrega">
+                    <span class="ciudad-tag">El Alto</span>
+                    <ul>
+                        <li>UPEA</li>
+                        <li>Faro Murillo</li>
+                        <li>Teleférico Amarillo (Satelite)</li>
+                        <li>Cruce Viacha</li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- COLUMNA DERECHA: Bienvenida y Categorías -->
+        <div class="contenido-categorias">
+            <div class="bienvenida-texto">
+                ✨ ¡Bienvenidos a Felices Comienzos! Encuentra detalles únicos y personalizados para cada ocasión especial. Selecciona una categoría para ver los productos disponibles. ✨
+            </div>
+
+            <h2 class="titulo-seccion">Nuestras Categorías</h2>
             
-            <!-- Álbumes -->
-            <a href="Albumes.html" class="tarjeta-cat-home">
-                <img src="img/cat-albumes.jpg" alt="Álbumes">
-                <h3>Álbumes</h3>
-            </a>
+            <div class="cuadricula-categorias" id="gridCategorias">
+                
+                <!-- Álbumes -->
+                <a href="Albumes.html" class="tarjeta-categoria">
+                    <img src="img/cat-albumes.jpg" alt="Álbumes">
+                    <span>Álbumes</span>
+                </a>
 
-            <!-- Invitación y material infantil -->
-            <a href="Invitacion y material infantil.html" class="tarjeta-cat-home">
-                <img src="img/cat-infantiles.jpg" alt="Invitación y material infantil">
-                <h3>Invitación y material infantil</h3>
-            </a>
+                <!-- Invitación y material infantil -->
+                <a href="Invitacion y material infantil.html" class="tarjeta-categoria">
+                    <img src="img/cat-infantiles.jpg" alt="Invitación y material infantil">
+                    <span>Invitación y material infantil</span>
+                </a>
 
-            <!-- Cuadros Personalizados en MDF y Resina -->
-            <a href="Cuadros Personalizados en MDF y Resina.html" class="tarjeta-cat-home">
-                <img src="img/cat-resina.jpg" alt="Cuadros Personalizados en MDF y Resina">
-                <h3>Cuadros Personalizados en MDF y Resina</h3>
-            </a>
+                <!-- Cuadros Personalizados en MDF y Resina -->
+                <a href="Cuadros Personalizados en MDF y Resina.html" class="tarjeta-categoria">
+                    <img src="img/cat-resina.jpg" alt="Cuadros Personalizados en MDF y Resina">
+                    <span>Cuadros Personalizados en MDF y Resina</span>
+                </a>
 
-            <!-- Invitaciones de Boda y 15 años -->
-            <a href="Invitaciones de Boda y 15 años.html" class="tarjeta-cat-home">
-                <img src="img/cat-boda.jpg" alt="Invitaciones de Boda y 15 años">
-                <h3>Invitaciones de Boda y 15 años</h3>
-            </a>
+                <!-- Invitaciones de Boda y 15 años -->
+                <a href="Invitaciones de Boda y 15 años.html" class="tarjeta-categoria">
+                    <img src="img/cat-boda.jpg" alt="Invitaciones de Boda y 15 años">
+                    <span>Invitaciones de Boda y 15 años</span>
+                </a>
 
-            <!-- Fotos imantadas y Polaroid -->
-            <a href="Fotos imantadas y Polaroid.html" class="tarjeta-cat-home">
-                <img src="img/cat-polaroid.jpg" alt="Fotos imantadas y Polaroid">
-                <h3>Fotos imantadas y Polaroid</h3>
-            </a>
+                <!-- Fotos imantadas y Polaroid -->
+                <a href="Fotos imantadas y Polaroid.html" class="tarjeta-categoria">
+                    <img src="img/cat-polaroid.jpg" alt="Fotos imantadas y Polaroid">
+                    <span>Fotos imantadas y Polaroid</span>
+                </a>
 
-            <!-- Calendarios -->
-            <a href="Calendarios.html" class="tarjeta-cat-home">
-                <img src="img/cat-calendarios.jpg" alt="Calendarios">
-                <h3>Calendarios</h3>
-            </a>
+                <!-- Calendarios -->
+                <a href="Calendarios.html" class="tarjeta-categoria">
+                    <img src="img/cat-calendarios.jpg" alt="Calendarios">
+                    <span>Calendarios</span>
+                </a>
 
-            <!-- Juego uno y cartas personalizadas -->
-            <a href="juego uno y cartas personalizadas.html" class="tarjeta-cat-home">
-                <img src="img/cat-uno.jpg" alt="Juego uno y cartas personalizadas">
-                <h3>Juego uno y cartas personalizadas</h3>
-            </a>
+                <!-- Juego uno y cartas personalizadas -->
+                <a href="juego uno y cartas personalizadas.html" class="tarjeta-categoria">
+                    <img src="img/cat-uno.jpg" alt="Juego uno y cartas personalizadas">
+                    <span>Juego uno y cartas personalizadas</span>
+                </a>
 
-            <!-- Stickers -->
-            <a href="stickers.html" class="tarjeta-cat-home">
-                <img src="img/cat-stickers.jpg" alt="Stickers">
-                <h3>Stickers</h3>
-            </a>
+                <!-- Stickers -->
+                <a href="stickers.html" class="tarjeta-categoria">
+                    <img src="img/cat-stickers.jpg" alt="Stickers">
+                    <span>Stickers</span>
+                </a>
 
+            </div>
         </div>
+
     </main>
 
     <!-- BANNER INFERIOR DE BENEFICIOS -->
@@ -92,14 +131,21 @@
         <p>Felices Comienzos © 2026 - Todos los derechos reservados</p>
     </footer>
 
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/59177219018?text=Hola!%20Deseo%20más%20información%20sobre%20los%20productos%20de%20Felices%20Comienzos." class="whatsapp-flotante" target="_blank" title="Escríbenos por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="icono-wsp">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.6 2.137 8.038l-2.137 7.962 7.938-2.175c2.375 1.288 5.112 2.012 8.062 2.012 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.338c-2.438 0-4.775-0.65-6.812-1.875l-0.488-0.3-5.062 1.388 1.388-4.938-0.313-0.5c-1.312-2.113-2-4.575-2-7.113 0-7.362 5.975-13.338 13.338-13.338s13.338 5.975 13.338 13.338-5.975 13.338-13.338 13.338zM22.75 19.588c-0.362-0.188-2.138-1.050-2.475-1.175s-0.588-0.188-0.838 0.188c-0.25 0.362-0.963 1.175-1.188 1.413s-0.438 0.263-0.8 0.075c-0.362-0.188-1.525-0.562-2.9-1.788-1.075-0.95-1.8-2.125-2.012-2.488s-0.025-0.55 0.162-0.738c0.162-0.162 0.362-0.425 0.55-0.638s0.25-0.362 0.375-0.6c0.125-0.25 0.063-0.463-0.038-0.65s-0.838-2.025-1.15-2.775c-0.3-0.738-0.612-0.638-0.838-0.65s-0.463-0.013-0.7-0.013c-0.237 0-0.625 0.088-0.95 0.438s-1.25 1.225-1.25 2.988 1.275 3.462 1.45 3.7 2.5 3.825 6.05 5.362c0.85 0.375 1.513 0.6 2.038 0.762 0.862 0.275 1.65 0.237 2.275 0.138 0.688-0.1 2.138-0.875 2.438-1.725s0.3-1.575 0.213-1.725c-0.088-0.15-0.325-0.238-0.688-0.425z" fill="#FFF"/>
+        </svg>
+    </a>
+
     <script>
         // Buscador interactivo para filtrar categorías en tiempo real
         function filtrarCategorias() {
             let texto = document.getElementById('buscador').value.toLowerCase();
-            let tarjetas = document.querySelectorAll('.tarjeta-cat-home');
+            let tarjetas = document.querySelectorAll('.tarjeta-categoria');
             
             tarjetas.forEach(tarjeta => {
-                let titulo = tarjeta.querySelector('h3').textContent.toLowerCase();
+                let titulo = tarjeta.querySelector('span').textContent.toLowerCase();
                 if (titulo.includes(texto)) {
                     tarjeta.style.display = "flex";
                 } else {
@@ -108,11 +154,5 @@
             });
         }
     </script>
-<!-- BOTÓN FLOTANTE DE WHATSAPP -->
-    <a href="https://wa.me/59177219018?text=Hola!%20Deseo%20más%20información%20sobre%20los%20productos%20de%20Felices%20Comienzos." class="whatsapp-flotante" target="_blank" title="Escríbenos por WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="icono-wsp">
-            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.6 2.137 8.038l-2.137 7.962 7.938-2.175c2.375 1.288 5.112 2.012 8.062 2.012 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.338c-2.438 0-4.775-0.65-6.812-1.875l-0.488-0.3-5.062 1.388 1.388-4.938-0.313-0.5c-1.312-2.113-2-4.575-2-7.113 0-7.362 5.975-13.338 13.338-13.338s13.338 5.975 13.338 13.338-5.975 13.338-13.338 13.338zM22.75 19.588c-0.362-0.188-2.138-1.050-2.475-1.175s-0.588-0.188-0.838 0.188c-0.25 0.362-0.963 1.175-1.188 1.413s-0.438 0.263-0.8 0.075c-0.362-0.188-1.525-0.562-2.9-1.788-1.075-0.95-1.8-2.125-2.012-2.488s-0.025-0.55 0.162-0.738c0.162-0.162 0.362-0.425 0.55-0.638s0.25-0.362 0.375-0.6c0.125-0.25 0.063-0.463-0.038-0.65s-0.838-2.025-1.15-2.775c-0.3-0.738-0.612-0.638-0.838-0.65s-0.463-0.013-0.7-0.013c-0.237 0-0.625 0.088-0.95 0.438s-1.25 1.225-1.25 2.988 1.275 3.462 1.45 3.7 2.5 3.825 6.05 5.362c0.85 0.375 1.513 0.6 2.038 0.762 0.862 0.275 1.65 0.237 2.275 0.138 0.688-0.1 2.138-0.875 2.438-1.725s0.3-1.575 0.213-1.725c-0.088-0.15-0.325-0.238-0.688-0.425z" fill="#FFF"/>
-        </svg>
-    </a>
 </body>
 </html>
