@@ -283,3 +283,12 @@ footer {
         gap: 10px;
     }
 }
+/* Corrección para las imágenes de productos en las páginas de categorías */
+.producto img, 
+.tarjeta-producto img, 
+.contenedor-productos img,
+main img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
