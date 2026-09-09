@@ -546,11 +546,13 @@ footer {
     color: #2d3748;
     font-weight: bold;
 }
+
 /* --- DISEÑO RESPONSIVE PARA CELULARES (Pantallas menores a 768px) --- */
 @media (max-width: 768px) {
-    /* 1. Página de inicio: Apilar la barra lateral de información y las categorías */
+    /* 1. Página de inicio: Invierte el orden para mostrar la descripción (bienvenida) 
+       primero y los puntos de entrega (sidebar) después. */
     .contenedor-principal-inicio {
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 20px;
         margin: 15px auto;
         padding: 0 10px;
@@ -559,7 +561,7 @@ footer {
     .sidebar-info {
         flex: unset;
         width: 100%;
-        position: static; /* Quita el sticky para que fluya de manera natural */
+        position: static;
     }
 
     /* 2. Páginas de productos: Apilar el carrusel de fotos arriba y la información abajo */
@@ -570,14 +572,14 @@ footer {
     .carrusel-contenedor {
         width: 100%;
         min-width: 100%;
-        height: 250px; /* Ajusta la altura del carrusel para móviles */
+        height: 250px;
     }
 
     .info-producto {
         padding: 15px;
     }
 
-    /* 3. Márgenes generales y contenedores para aprovechar la pantalla del móvil */
+    /* 3. Márgenes generales y contenedores para móviles */
     .contenedor-categoria {
         padding: 0 10px;
         margin: 15px auto;
