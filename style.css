@@ -45,26 +45,25 @@ body {
     background-color: #2b6cb0;
 }
 
-/* Cabecera / Portada (Corregida para mostrar el logo completo) */
+/* Cabecera / Portada */
 .header-portada {
     width: 100%;
-    background-color: #fcfbf9; /* Fondo neutro para el logo */
+    background-color: #fcfbf9;
     text-align: center;
     overflow: hidden;
-    padding: 10px 0; /* Pequeño espacio alrededor */
+    padding: 10px 0;
 }
 
 .logo-portada {
     width: 100%;
     height: auto;
-    max-height: 350px; /* Altura máxima del logo */
-    object-fit: contain; /* Muestra la imagen completa sin recortar */
+    max-height: 350px;
+    object-fit: contain;
     display: block;
     margin: 0 auto;
 }
 
-
-/* --- DISEÑO DE DOS COLUMNAS (PÁGINA DE INICIO) --- */
+/* --- DISEÑO DE DOS COLUMNAS (INICIO) --- */
 .contenedor-principal-inicio {
     max-width: 1250px;
     margin: 30px auto;
@@ -74,7 +73,6 @@ body {
     align-items: flex-start;
 }
 
-/* Columna Izquierda: Tarjeta Informativa (Tienda Virtual, Entregas, Envíos) */
 .sidebar-info {
     flex: 0 0 310px;
     position: sticky;
@@ -147,8 +145,6 @@ body {
     margin-bottom: 2px;
 }
 
-
-/* Columna Derecha: Categorías (Página de Inicio) */
 .contenido-categorias {
     flex: 1;
 }
@@ -172,7 +168,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Cuadrícula de Categorías (Inicio) */
+/* Cuadrícula de Categorías */
 .cuadricula-categorias {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
@@ -210,23 +206,11 @@ body {
     font-size: 0.88rem;
 }
 
-
 /* --- ESTILOS PARA PÁGINAS DE CATEGORÍA Y PRODUCTOS --- */
 .contenedor-categoria {
     max-width: 1000px;
     margin: 30px auto;
     padding: 0 20px;
-}
-
-.migas-pan {
-    font-size: 0.9rem;
-    color: #718096;
-    margin-bottom: 20px;
-}
-
-.migas-pan a {
-    color: #3182ce;
-    text-decoration: none;
 }
 
 .titulo-categoria {
@@ -243,7 +227,6 @@ body {
     gap: 25px;
 }
 
-/* Tarjeta individual de producto (Horizontal) */
 .tarjeta-producto-completa {
     display: flex;
     background: white;
@@ -253,7 +236,7 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 }
 
-/* Carrusel de Imágenes (Izquierda) */
+/* Carrusel de Imágenes */
 .carrusel-contenedor {
     position: relative;
     width: 350px;
@@ -284,7 +267,6 @@ body {
     opacity: 1;
 }
 
-/* Flechas flotantes del carrusel */
 .flecha-carrusel {
     position: absolute;
     top: 50%;
@@ -312,7 +294,7 @@ body {
     right: 10px;
 }
 
-/* Información del Producto (Derecha) */
+/* Información del Producto */
 .info-producto {
     padding: 22px;
     display: flex;
@@ -385,7 +367,6 @@ body {
     background-color: #20ba5a;
 }
 
-
 /* --- SECCIONES INFERIORES Y FOOTER --- */
 .banner-beneficios {
     background-color: #edf2f7;
@@ -408,7 +389,6 @@ footer {
     color: #cbd5e0;
     font-size: 0.9rem;
 }
-
 
 /* Botón flotante de WhatsApp */
 .whatsapp-flotante {
@@ -440,6 +420,7 @@ footer {
     height: 35px;
     fill: white;
 }
+
 /* --- VENTANA MODAL DE RESERVA --- */
 .modal-overlay {
     position: fixed;
@@ -501,51 +482,67 @@ footer {
 }
 
 .input-dato {
-    padding:
-/* --- ESTILOS MEJORADOS PARA MIGRAS DE PAN (NAVEGACIÓN) --- */
-
-/* Contenedor principal de la barra de navegación */
-.contenedor-navegacion {
-    background-color: #f7fafc; /* Un gris muy claro de fondo */
-    border-bottom: 1px solid #e2e8f0; /* Un borde sutil abajo */
-    padding: 15px 20px;
-    margin-bottom: 30px; /* Espacio antes de los productos */
-    border-radius: 8px; /* Bordes ligeramente redondeados */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    padding: 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
 }
 
-/* Estilos del texto de las migas de pan */
+.input-dato:focus {
+    border-color: #3182ce;
+}
+
+.btn-whatsapp-enviar {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-align: center;
+}
+
+.btn-whatsapp-enviar:hover {
+    background-color: #20ba5a;
+}
+
+/* --- BARRA DE NAVEGACIÓN (MIGAS DE PAN) DESTACADA --- */
+.contenedor-navegacion {
+    background-color: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #3182ce;
+    padding: 12px 20px;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
 .migas-pan {
     font-size: 0.95rem;
     font-weight: 500;
     color: #4a5568;
 }
 
-/* Estilo para los enlaces (Inicio) */
 .migas-pan a {
-    color: #3182ce; /* Color azul corporativo */
+    color: #3182ce;
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.2s ease;
 }
 
-/* Efecto hover para los enlaces */
 .migas-pan a:hover {
-    color: #2b6cb0; /* Azul más oscuro al pasar el mouse */
     text-decoration: underline;
 }
 
-/* Estilo para el separador (>) */
 .migas-pan .separador {
-    color: #a0aec0; /* Color gris suave para el símbolo > */
+    color: #a0aec0;
     margin: 0 8px;
-    font-weight: normal;
 }
 
-/* Estilo para la página actual (Álbumes) */
 .migas-pan .pagina-actual {
-    color: #2d3748; /* Color oscuro para la página actual */
+    color: #2d3748;
     font-weight: bold;
 }
