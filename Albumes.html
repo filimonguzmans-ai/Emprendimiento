@@ -50,7 +50,7 @@
 
                     <p class="aviso-entrega">📍 Entregas en La Paz y El Alto: Se realizan en puntos céntricos de ambas ciudades (previa coordinación). El punto exacto se definirá por WhatsApp.</p>
 
-                    <button class="btn-reservar" onclick="abrirModal('Álbum Deluxe Personalizado', 'cant-1', 'Bs. 250.00')">
+                    <button class="btn-reservar" onclick="abrirModal('Álbum Deluxe Personalizado', 'cant-1', 250.00)">
                         Realizar Reserva por WhatsApp
                     </button>
                 </div>
@@ -79,7 +79,7 @@
 
                     <p class="aviso-entrega">📍 Entregas en La Paz y El Alto: Se realizan en puntos céntricos de ambas ciudades (previa coordinación).</p>
 
-                    <button class="btn-reservar" onclick="abrirModal('Álbum Clásico de Recuerdo', 'cant-2', 'Bs. 180.00')">
+                    <button class="btn-reservar" onclick="abrirModal('Álbum Clásico de Recuerdo', 'cant-2', 180.00)">
                         Realizar Reserva por WhatsApp
                     </button>
                 </div>
@@ -112,7 +112,7 @@
     <!-- SCRIPT DE FUNCIONALIDAD -->
     <script>
         let productoActual = "";
-        let precioActual = "";
+        let precioUnitarioNum = 0;
         let inputCantidadIdActual = "";
 
         // Cambiar de slide con flechas
@@ -137,10 +137,10 @@
             });
         });
 
-        // Abrir Modal de Datos
-        function abrirModal(nombreProducto, idInputCantidad, precio) {
+        // Abrir Modal de Datos (recibe el precio como número para calcular totales)
+        function abrirModal(nombreProducto, idInputCantidad, precioNum) {
             productoActual = nombreProducto;
-            precioActual = precio;
+            precioUnitarioNum = precioNum;
             inputCantidadIdActual = idInputCantidad;
             document.getElementById('modalReserva').style.display = 'flex';
         }
@@ -150,22 +150,24 @@
             document.getElementById('modalReserva').style.display = 'none';
         }
 
-        // Enviar pedido optimizado por WhatsApp
+        // Enviar pedido optimizado por WhatsApp con cálculo de precio total
         function enviarWhatsApp() {
             let nombre = document.getElementById('nombreCliente').value.trim();
             let ciudad = document.getElementById('ciudadCliente').value.trim();
-            let cantidad = document.getElementById(inputCantidadIdActual).value;
+            let cantidad = parseInt(document.getElementById(inputCantidadIdActual).value) || 1;
 
             if (nombre === "" || ciudad === "") {
                 alert("Por favor, completa tu nombre y ciudad para continuar.");
                 return;
             }
 
+            let precioTotal = (precioUnitarioNum * cantidad).toFixed(2);
             let numeroWsp = "59177219018";
             let mensaje = `¡Hola! Deseo realizar la reserva de un producto:%0A%0A` +
                           `🛍️ *Producto:* ${productoActual}%0A` +
                           `🔢 *Cantidad:* ${cantidad}%0A` +
-                          `💰 *Precio Unitario:* ${precioActual}%0A%0A` +
+                          `💰 *Precio Unitario:* Bs. ${precioUnitarioNum.toFixed(2)}%0A` +
+                          `💵 *Precio Total:* *Bs. ${precioTotal}*%0A%0A` +
                           `👤 *Cliente:* ${nombre}%0A` +
                           `🏙️ *Ciudad:* ${ciudad}%0A%0A` +
                           `Quedo atento/a al código QR para el pago del anticipo a fin de coordinar los detalles de mi pedido y coordinar la entrega.`;
@@ -175,5 +177,9 @@
             cerrarModal();
         }
     </script>
+<!-- BOTÓN FLOTANTE DE WHATSAPP -->
+<a href="https://wa.me/59177219018?text=Hola!%20Deseo%20más%20información%20sobre%20sus%20productos." class="btn-whatsapp-flotante" target="_blank" title="Contáctanos por WhatsApp">
+    <img src="img/icono-whatsapp.png" alt="WhatsApp">
+</a>
 </body>
 </html>
