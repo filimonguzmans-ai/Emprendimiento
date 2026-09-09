@@ -45,22 +45,22 @@ body {
     background-color: #2b6cb0;
 }
 
-/* Cabecera / Portada */
+/* Cabecera / Portada corregida para mostrar la imagen completa */
 .header-portada {
     width: 100%;
-    max-height: 300px;
-    overflow: hidden;
-    background-color: #1a202c;
+    background-color: #fcfbf9; /* O el color de fondo de tu logo */
     text-align: center;
+    overflow: hidden;
 }
 
 .logo-portada {
     width: 100%;
     height: auto;
-    max-height: 300px;
-    object-fit: cover;
+    max-height: 350px;
+    object-fit: contain; /* Esto evita que la imagen se recorte y se vea completa */
+    display: block;
+    margin: 0 auto;
 }
-
 
 /* --- DISEÑO DE DOS COLUMNAS (PÁGINA DE INICIO) --- */
 .contenedor-principal-inicio {
