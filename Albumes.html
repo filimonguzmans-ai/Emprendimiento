@@ -8,162 +8,123 @@
 </head>
 <body>
 
-    <!-- BARRA SUPERIOR CON BOTÓN PARA VOLVER AL INICIO -->
-    <div class="barra-superior">
-        <div class="contenedor-navegacion">
-            <a href="index.html" class="btn-volver">⬅ Volver al Inicio</a>
-            <span class="titulo-pagina-actual">Categoría: Álbumes</span>
-        </div>
-    </div>
-
-    <!-- CABECERA CON LOGO -->
+    <!-- CABECERA -->
     <header class="header-portada">
-        <img src="img/logo-portada.jpg" alt="Felices Comienzos" class="logo-portada">
+        <a href="index.html">
+            <img src="img/logo-portada.jpg" alt="Felices Comienzos" class="logo-portada">
+        </a>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL DE LA CATEGORÍA -->
-    <main class="catalogo-categoria">
-        <!-- Título de la categoría centrado arriba -->
-        <h2 class="titulo-categoria-centrado">Nuestros Productos en Álbumes</h2>
-        
-        <div class="contenedor-productos">
-            
-            <!-- Producto con diseño de 2 columnas (Foto izq / Info der) -->
-            <div class="tarjeta-producto-horizontal">
+    <!-- CONTENIDO DE LA CATEGORÍA -->
+    <main class="contenedor-categoria">
+        <div class="migas-pan">
+            <a href="index.html">Inicio</a> &gt; <span>Álbumes</span>
+        </div>
+
+        <h1 class="titulo-categoria">Nuestros Productos en Álbumes</h1>
+
+        <!-- LISTADO DE PRODUCTOS -->
+        <div class="lista-productos">
+
+            <!-- PRODUCTO 1 -->
+            <div class="tarjeta-producto-completa">
                 
-                <!-- Columna Izquierda: Carrusel de Fotos -->
-                <div class="contenedor-carrusel">
-                    <button class="flecha flecha-izq" onclick="moverCarrusel(this, -1)">&#10094;</button>
-                    <div class="carrusel-imagenes">
-                        <img src="img/Album Personalizado-1.jpg" alt="Álbum Vista 1">
-                        <img src="img/Album Personalizado-2.jpg" alt="Álbum Vista 2">
-                        <img src="img/Album Personalizado-3.jpg" alt="Álbum Vista 3">
+                <!-- CARRUSEL DE IMÁGENES (IZQUIERDA) -->
+                <div class="carrusel-contenedor" id="carrusel1">
+                    <div class="carrusel-slides">
+                        <img src="img/album-deluxe-1.jpg" alt="Álbum Deluxe 1" class="slide activa">
+                        <img src="img/album-deluxe-2.jpg" alt="Álbum Deluxe 2" class="slide">
+                        <img src="img/album-deluxe-3.jpg" alt="Álbum Deluxe 3" class="slide">
                     </div>
-                    <button class="flecha flecha-der" onclick="moverCarrusel(this, 1)">&#10095;</button>
+                    <!-- Flechas flotantes -->
+                    <button class="flecha-carrusel izq" onclick="cambiarSlide('carrusel1', -1)">&#10094;</button>
+                    <button class="flecha-carrusel der" onclick="cambiarSlide('carrusel1', 1)">&#10095;</button>
                 </div>
 
-                <!-- Columna Derecha: Información, Precio, Cantidad y Avisos -->
+                <!-- INFORMACIÓN Y COMPRA (DERECHA) -->
                 <div class="info-producto">
-                    <h3>Álbum Deluxe Personalizado</h3>
-                    <p class="descripcion-corta">Diseño exclusivo hecho a mano para conservar tus mejores momentos con acabados de alta calidad.</p>
-                    <p class="precio">$Bs. 250.00</p>
+                    <h2>Álbum Deluxe Personalizado</h2>
+                    <p class="descripcion-prod">Diseño exclusivo hecho a mano para conservar tus mejores momentos con acabados de alta calidad.</p>
+                    <div class="precio-prod">Bs. 250.00</div>
                     
                     <div class="selector-cantidad">
-                        <label for="cantidad-1">Cantidad:</label>
-                        <input type="number" id="cantidad-1" value="1" min="1" class="input-cantidad">
+                        <label for="cant-1">Cantidad:</label>
+                        <input type="number" id="cant-1" value="1" min="1" class="input-cantidad">
                     </div>
 
-                    <!-- NUEVO: Información previa sobre entregas locales en La Paz y El Alto -->
-                    <div class="aviso-entregas-previa">
-                        <p>📍 <strong>Entregas en La Paz y El Alto:</strong> Se realizan en puntos céntricos de ambas ciudades (previa coordinación). El punto exacto se definirá por WhatsApp una vez hecha la reserva.</p>
-                    </div>
+                    <p class="aviso-entrega">📍 Entregas en La Paz y El Alto: Se realizan en puntos céntricos de ambas ciudades (previa coordinación). El punto exacto se definirá por WhatsApp.</p>
 
-                    <button onclick="abrirFormulario('Álbum Deluxe Personalizado', '250.00', 'cantidad-1')" class="btn-reservar">
-                        Realizar Reserva
+                    <!-- Botón de Reserva con enlace dinámico a WhatsApp -->
+                    <button class="btn-reservar" onclick="reservarPorWhatsApp('Álbum Deluxe Personalizado', 'cant-1', 'Bs. 250.00')">
+                        Realizar Reserva por WhatsApp
                     </button>
                 </div>
+            </div>
 
+            <!-- PRODUCTO 2 (Puedes duplicar este bloque para más productos) -->
+            <div class="tarjeta-producto-completa">
+                <div class="carrusel-contenedor" id="carrusel2">
+                    <div class="carrusel-slides">
+                        <img src="img/album-clasico-1.jpg" alt="Álbum Clásico 1" class="slide activa">
+                        <img src="img/album-clasico-2.jpg" alt="Álbum Clásico 2" class="slide">
+                    </div>
+                    <button class="flecha-carrusel izq" onclick="cambiarSlide('carrusel2', -1)">&#10094;</button>
+                    <button class="flecha-carrusel der" onclick="cambiarSlide('carrusel2', 1)">&#10095;</button>
+                </div>
+
+                <div class="info-producto">
+                    <h2>Álbum Clásico de Recuerdo</h2>
+                    <p class="descripcion-prod">Ideal para fotografías instantáneas y notas especiales, encuadernación resistente.</p>
+                    <div class="precio-prod">Bs. 180.00</div>
+                    
+                    <div class="selector-cantidad">
+                        <label for="cant-2">Cantidad:</label>
+                        <input type="number" id="cant-2" value="1" min="1" class="input-cantidad">
+                    </div>
+
+                    <p class="aviso-entrega">📍 Entregas en La Paz y El Alto: Se realizan en puntos céntricos de ambas ciudades (previa coordinación).</p>
+
+                    <button class="btn-reservar" onclick="reservarPorWhatsApp('Álbum Clásico de Recuerdo', 'cant-2', 'Bs. 180.00')">
+                        Realizar Reserva por WhatsApp
+                    </button>
+                </div>
             </div>
 
         </div>
     </main>
 
-    <!-- VENTANA FLOTANTE (FORMULARIO MODAL) -->
-    <div id="modalFormulario" class="modal-overlay" style="display: none;">
-        <div class="modal-contenido">
-            <span class="btn-cerrar" onclick="cerrarFormulario()">&times;</span>
-            <h3>Completar Datos de Reserva</h3>
-            
-            <!-- Avisos importantes de reserva y envíos -->
-            <div class="avisos-reserva">
-                <p>⚠️ <strong>Nota importante:</strong> La reserva se realiza con el <strong>50% del precio</strong> del producto.</p>
-                <p>📦 <em>Nota sobre envíos:</em> Para envíos a nivel nacional, <strong>el precio no incluye el costo de envío</strong>.</p>
-            </div>
-
-            <div class="form-pedido">
-                <input type="text" id="nombreCliente" placeholder="Tu Nombre Completo" class="input-dato">
-                <input type="text" id="ciudadCliente" placeholder="Ciudad (Ej. La Paz, El Alto, etc.)" class="input-dato">
-                
-                <button onclick="enviarWhatsApp()" class="btn-whatsapp">
-                    Enviar Pedido y Pedir QR por WhatsApp
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>Felices Comienzos © 2026</p>
-    </footer>
-
-    <!-- SCRIPTS DE FUNCIONALIDAD -->
+    <!-- SCRIPT PARA EL CARRUSEL Y WHATSAPP -->
     <script>
-        let productoSeleccionado = "";
-        let precioSeleccionado = "";
-        let inputCantidadId = "";
-
-        // Abrir modal de formulario
-        function abrirFormulario(producto, precio, cantId) {
-            productoSeleccionado = producto;
-            precioSeleccionado = precio;
-            inputCantidadId = cantId;
-            document.getElementById('modalFormulario').style.display = 'flex';
+        // Función para cambiar de slide con flechas
+        function cambiarSlide(idCarrusel, direccion) {
+            const contenedor = document.getElementById(idCarrusel);
+            const slides = contenedor.querySelectorAll('.slide');
+            let indexActual = Array.from(slides).findIndex(slide => slide.classList.contains('activa'));
+            
+            slides[indexActual].classList.remove('activa');
+            indexActual = (indexActual + direccion + slides.length) % slides.length;
+            slides[indexActual].classList.add('activa');
         }
 
-        // Cerrar modal
-        function cerrarFormulario() {
-            document.getElementById('modalFormulario').style.display = 'none';
-        }
-
-        // Enviar datos por WhatsApp con la estructura solicitada
-        function enviarWhatsApp() {
-            let nombre = document.getElementById('nombreCliente').value;
-            let ciudad = document.getElementById('ciudadCliente').value;
-            let cantidad = document.getElementById(inputCantidadId).value;
-
-            if (nombre === "" || ciudad === "") {
-                alert("Por favor, completa todos los campos antes de continuar.");
-                return;
-            }
-
-            let numeroWhatsApp = "59177219018"; 
-
-            let mensaje = `Hola! Deseo realizar una reserva:%0A%0A` +
-                          `🛍️ *Producto:* ${productoSeleccionado}%0A` +
-                          `🔢 *Cantidad:* ${cantidad}%0A` +
-                          `💰 *Precio Unitario:* $Bs. ${precioSeleccionado}%0A%0A` +
-                          `👤 *Nombre:* ${nombre}%0A` +
-                          `🏙️ *Ciudad:* ${ciudad}%0A%0A` +
-                          `Estoy a la espera del código QR para realizar el pago del 50% de anticipo y enviar mi comprobante.`;
-
-            window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
-            cerrarFormulario();
-        }
-
-        // Carrusel automático cada 5 segundos
-        setInterval(() => {
-            const carruseles = document.querySelectorAll('.carrusel-imagenes');
+        // Automatizar carruseles cada 4 segundos
+        document.addEventListener("DOMContentLoaded", function() {
+            const carruseles = document.querySelectorAll('.carrusel-contenedor');
             carruseles.forEach(carrusel => {
-                const anchoImagen = carrusel.clientWidth;
-                if (carrusel.scrollLeft + carrusel.clientWidth >= carrusel.scrollWidth - 10) {
-                    carrusel.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    carrusel.scrollBy({ left: anchoImagen, behavior: 'smooth' });
-                }
+                const id = carrusel.id;
+                setInterval(() => {
+                    cambiarSlide(id, 1);
+                }, 4000);
             });
-        }, 5000);
+        });
 
-        // Mover carrusel con flechas
-        function moverCarrusel(boton, direccion) {
-            const contenedor = boton.parentElement.querySelector('.carrusel-imagenes');
-            const anchoImagen = contenedor.clientWidth;
-            contenedor.scrollBy({ left: anchoImagen * direccion, behavior: 'smooth' });
+        // Enviar pedido ordenado a WhatsApp
+        function reservarPorWhatsApp(nombreProducto, idInputCantidad, precio) {
+            let cantidad = document.getElementById(idInputCantidad).value;
+            let numeroWsp = "59177219018";
+            let mensaje = `Hola! Deseo realizar una reserva:\n\n*Producto:* ${nombreProducto}\n*Cantidad:* ${cantidad}\n*Precio unitario:* ${precio}\n\n¿Me confirman la disponibilidad y el punto de entrega por favor?`;
+            let url = `https://wa.me/${numeroWsp}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
         }
     </script>
-<!-- BOTÓN FLOTANTE DE WHATSAPP -->
-    <a href="https://wa.me/59177219018?text=Hola!%20Deseo%20más%20información%20sobre%20los%20productos%20de%20Felices%20Comienzos." class="whatsapp-flotante" target="_blank" title="Escríbenos por WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="icono-wsp">
-            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.6 2.137 8.038l-2.137 7.962 7.938-2.175c2.375 1.288 5.112 2.012 8.062 2.012 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.338c-2.438 0-4.775-0.65-6.812-1.875l-0.488-0.3-5.062 1.388 1.388-4.938-0.313-0.5c-1.312-2.113-2-4.575-2-7.113 0-7.362 5.975-13.338 13.338-13.338s13.338 5.975 13.338 13.338-5.975 13.338-13.338 13.338zM22.75 19.588c-0.362-0.188-2.138-1.050-2.475-1.175s-0.588-0.188-0.838 0.188c-0.25 0.362-0.963 1.175-1.188 1.413s-0.438 0.263-0.8 0.075c-0.362-0.188-1.525-0.562-2.9-1.788-1.075-0.95-1.8-2.125-2.012-2.488s-0.025-0.55 0.162-0.738c0.162-0.162 0.362-0.425 0.55-0.638s0.25-0.362 0.375-0.6c0.125-0.25 0.063-0.463-0.038-0.65s-0.838-2.025-1.15-2.775c-0.3-0.738-0.612-0.638-0.838-0.65s-0.463-0.013-0.7-0.013c-0.237 0-0.625 0.088-0.95 0.438s-1.25 1.225-1.25 2.988 1.275 3.462 1.45 3.7 2.5 3.825 6.05 5.362c0.85 0.375 1.513 0.6 2.038 0.762 0.862 0.275 1.65 0.237 2.275 0.138 0.688-0.1 2.138-0.875 2.438-1.725s0.3-1.575 0.213-1.725c-0.088-0.15-0.325-0.238-0.688-0.425z" fill="#FFF"/>
-        </svg>
-    </a>
 </body>
 </html>
