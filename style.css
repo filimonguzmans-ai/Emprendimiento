@@ -502,3 +502,50 @@ footer {
 
 .input-dato {
     padding:
+/* --- ESTILOS MEJORADOS PARA MIGRAS DE PAN (NAVEGACIÓN) --- */
+
+/* Contenedor principal de la barra de navegación */
+.contenedor-navegacion {
+    background-color: #f7fafc; /* Un gris muy claro de fondo */
+    border-bottom: 1px solid #e2e8f0; /* Un borde sutil abajo */
+    padding: 15px 20px;
+    margin-bottom: 30px; /* Espacio antes de los productos */
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Estilos del texto de las migas de pan */
+.migas-pan {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+/* Estilo para los enlaces (Inicio) */
+.migas-pan a {
+    color: #3182ce; /* Color azul corporativo */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+/* Efecto hover para los enlaces */
+.migas-pan a:hover {
+    color: #2b6cb0; /* Azul más oscuro al pasar el mouse */
+    text-decoration: underline;
+}
+
+/* Estilo para el separador (>) */
+.migas-pan .separador {
+    color: #a0aec0; /* Color gris suave para el símbolo > */
+    margin: 0 8px;
+    font-weight: normal;
+}
+
+/* Estilo para la página actual (Álbumes) */
+.migas-pan .pagina-actual {
+    color: #2d3748; /* Color oscuro para la página actual */
+    font-weight: bold;
+}
