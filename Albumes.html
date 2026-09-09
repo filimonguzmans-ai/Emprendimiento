@@ -92,19 +92,18 @@
     <div id="modalReserva" class="modal-overlay" style="display: none;">
         <div class="modal-contenido">
             <span class="btn-cerrar" onclick="cerrarModal()">&times;</span>
-            <h3>Completar Datos de Reserva</h3>
+            <h3>Finalizar tu Reserva</h3>
             
             <div class="avisos-reserva">
-                <p>⚠️ <strong>Nota:</strong> La reserva se coordina y el pago del anticipo se realiza por este medio.</p>
+                <p>✨ <strong>Información importante:</strong> Tu pedido quedará confirmado al realizar un anticipo del <strong>50%</strong>. Al enviar tus datos, te compartiremos el código QR correspondiente de forma directa por WhatsApp.</p>
             </div>
 
             <div class="form-pedido">
                 <input type="text" id="nombreCliente" placeholder="Tu Nombre Completo" class="input-dato">
                 <input type="text" id="ciudadCliente" placeholder="Ciudad (Ej. La Paz, El Alto, etc.)" class="input-dato">
-                <textarea id="notasCliente" placeholder="Notas extras o detalles personalizados para tu pedido..." class="input-dato input-textarea" rows="3"></textarea>
                 
                 <button onclick="enviarWhatsApp()" class="btn-whatsapp-enviar">
-                    Enviar Pedido por WhatsApp
+                    Continuar y Enviar por WhatsApp
                 </button>
             </div>
         </div>
@@ -151,27 +150,25 @@
             document.getElementById('modalReserva').style.display = 'none';
         }
 
-        // Enviar pedido completo por WhatsApp
+        // Enviar pedido optimizado por WhatsApp
         function enviarWhatsApp() {
             let nombre = document.getElementById('nombreCliente').value.trim();
             let ciudad = document.getElementById('ciudadCliente').value.trim();
-            let notas = document.getElementById('notasCliente').value.trim();
             let cantidad = document.getElementById(inputCantidadIdActual).value;
 
             if (nombre === "" || ciudad === "") {
-                alert("Por favor, completa al menos tu nombre y ciudad.");
+                alert("Por favor, completa tu nombre y ciudad para continuar.");
                 return;
             }
 
             let numeroWsp = "59177219018";
-            let mensaje = `Hola! Deseo realizar una reserva:%0A%0A` +
+            let mensaje = `¡Hola! Deseo realizar la reserva de un producto:%0A%0A` +
                           `🛍️ *Producto:* ${productoActual}%0A` +
                           `🔢 *Cantidad:* ${cantidad}%0A` +
                           `💰 *Precio Unitario:* ${precioActual}%0A%0A` +
-                          `👤 *Nombre:* ${nombre}%0A` +
-                          `🏙️ *Ciudad:* ${ciudad}%0A` +
-                          (notas ? `📝 *Notas Extras:* ${notas}%0A%0A` : `%0A`) +
-                          `Estoy a la espera de las instrucciones para el anticipo y coordinar la entrega.`;
+                          `👤 *Cliente:* ${nombre}%0A` +
+                          `🏙️ *Ciudad:* ${ciudad}%0A%0A` +
+                          `Quedo atento/a al código QR para el pago del anticipo a fin de coordinar los detalles de mi pedido y coordinar la entrega.`;
 
             let url = `https://wa.me/${numeroWsp}?text=${mensaje}`;
             window.open(url, '_blank');
