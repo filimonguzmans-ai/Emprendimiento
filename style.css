@@ -45,22 +45,24 @@ body {
     background-color: #2b6cb0;
 }
 
-/* Cabecera / Portada corregida para mostrar la imagen completa */
+/* Cabecera / Portada (Corregida para mostrar el logo completo) */
 .header-portada {
     width: 100%;
-    background-color: #fcfbf9; /* O el color de fondo de tu logo */
+    background-color: #fcfbf9; /* Fondo neutro para el logo */
     text-align: center;
     overflow: hidden;
+    padding: 10px 0; /* Pequeño espacio alrededor */
 }
 
 .logo-portada {
     width: 100%;
     height: auto;
-    max-height: 350px;
-    object-fit: contain; /* Esto evita que la imagen se recorte y se vea completa */
+    max-height: 350px; /* Altura máxima del logo */
+    object-fit: contain; /* Muestra la imagen completa sin recortar */
     display: block;
     margin: 0 auto;
 }
+
 
 /* --- DISEÑO DE DOS COLUMNAS (PÁGINA DE INICIO) --- */
 .contenedor-principal-inicio {
@@ -72,7 +74,7 @@ body {
     align-items: flex-start;
 }
 
-/* Columna Izquierda: Tarjeta Informativa (Tienda Virtual y Puntos de Entrega) */
+/* Columna Izquierda: Tarjeta Informativa (Tienda Virtual, Entregas, Envíos) */
 .sidebar-info {
     flex: 0 0 310px;
     position: sticky;
@@ -146,7 +148,7 @@ body {
 }
 
 
-/* Columna Derecha: Categorías */
+/* Columna Derecha: Categorías (Página de Inicio) */
 .contenido-categorias {
     flex: 1;
 }
@@ -170,7 +172,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Cuadrícula de Categorías */
+/* Cuadrícula de Categorías (Inicio) */
 .cuadricula-categorias {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
@@ -209,96 +211,7 @@ body {
 }
 
 
-/* --- SECCIONES INFERIORES Y FOOTER --- */
-.banner-beneficios {
-    background-color: #edf2f7;
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    margin-top: 40px;
-    text-align: center;
-    font-weight: 600;
-    color: #2d3748;
-    font-size: 0.95rem;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #2b3a4a;
-    color: #cbd5e0;
-    font-size: 0.9rem;
-}
-
-
-/* --- BOTÓN FLOTANTE DE WHATSAPP --- */
-.whatsapp-flotante {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 25px;
-    right: 25px;
-    background-color: #25d366;
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.whatsapp-flotante:hover {
-    transform: scale(1.1);
-    background-color: #20ba5a;
-}
-
-.icono-wsp {
-    width: 35px;
-    height: 35px;
-    fill: white;
-}
-
-
-/* --- RESPONSIVE PARA DISPOSITIVOS MÓVILES --- */
-@media (max-width: 900px) {
-    .contenedor-principal-inicio {
-        flex-direction: column;
-    }
-    
-    .sidebar-info {
-        flex: none;
-        width: 100%;
-        position: static;
-        margin-bottom: 20px;
-    }
-    
-    .banner-beneficios {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-/* Corrección para las imágenes de productos en las páginas de categorías */
-.producto img, 
-.tarjeta-producto img, 
-.contenedor-productos img,
-main img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-.imagen-producto {
-    max-width: 350px; /* O el ancho máximo que prefieras para tus fotos */
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-/* --- ESTILOS PARA LAS PÁGINAS DE CATEGORÍA Y PRODUCTOS --- */
+/* --- ESTILOS PARA PÁGINAS DE CATEGORÍA Y PRODUCTOS --- */
 .contenedor-categoria {
     max-width: 1000px;
     margin: 30px auto;
@@ -330,7 +243,7 @@ main img {
     gap: 25px;
 }
 
-/* Tarjeta individual de producto (Horizontal: Izquierda Carrusel / Derecha Info) */
+/* Tarjeta individual de producto (Horizontal) */
 .tarjeta-producto-completa {
     display: flex;
     background: white;
@@ -340,7 +253,7 @@ main img {
     box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 }
 
-/* --- CARRUSEL DE IMÁGENES --- */
+/* Carrusel de Imágenes (Izquierda) */
 .carrusel-contenedor {
     position: relative;
     width: 350px;
@@ -399,7 +312,7 @@ main img {
     right: 10px;
 }
 
-/* --- INFORMACIÓN DEL PRODUCTO (DERECHA) --- */
+/* Información del Producto (Derecha) */
 .info-producto {
     padding: 22px;
     display: flex;
@@ -472,18 +385,63 @@ main img {
     background-color: #20ba5a;
 }
 
-/* --- RESPONSIVE PARA CELULARES --- */
-@media (max-width: 768px) {
-    .tarjeta-producto-completa {
-        flex-direction: column;
-    }
-    .carrusel-contenedor {
-        width: 100%;
-        min-width: 100%;
-        height: 250px;
-    }
+
+/* --- SECCIONES INFERIORES Y FOOTER --- */
+.banner-beneficios {
+    background-color: #edf2f7;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+    gap: 15px;
 }
-/* --- ESTILOS PARA EL MODAL DE RESERVA --- */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2b3a4a;
+    color: #cbd5e0;
+    font-size: 0.9rem;
+}
+
+
+/* --- BOTÓN FLOTANTE DE WHATSAPP (Global Corregido) --- */
+.btn-whatsapp-flotante {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366; /* Color verde WhatsApp */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Círculo perfecto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Sombra */
+    z-index: 9999;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-whatsapp-flotante img {
+    width: 35px; /* Tamaño del icono blanco */
+    height: 35px;
+    object-fit: contain;
+    /* IMPORTANTE: La imagen no debe tener fondo de color ni bordes */
+}
+
+.btn-whatsapp-flotante:hover {
+    transform: scale(1.1); /* Efecto al pasar el mouse */
+    background-color: #20ba5a;
+}
+
+
+/* --- VENTANA MODAL DE RESERVA --- */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -494,7 +452,7 @@ main img {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 10000;
 }
 
 .modal-contenido {
@@ -544,81 +502,4 @@ main img {
 }
 
 .input-dato {
-    padding: 10px;
-    border: 1px solid #cbd5e0;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-family: inherit;
-    outline: none;
-}
-
-.input-dato:focus {
-    border-color: #3182ce;
-}
-
-.input-textarea {
-    resize: vertical;
-}
-
-.btn-whatsapp-enviar {
-    background-color: #25d366;
-    color: white;
-    border: none;
-    padding: 12px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    text-align: center;
-}
-
-.btn-whatsapp-enviar:hover {
-    background-color: #20ba5a;
-}
-/* --- BOTÓN FLOTANTE DE WHATSAPP --- */
-.btn-whatsapp-flotante {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #25d366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    z-index: 999;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-/* --- ESTILOS GLOBALES DEL BOTÓN FLOTANTE DE WHATSAPP --- */
-.btn-whatsapp-flotante {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #25d366; /* Color verde WhatsApp */
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; /* Forma circular */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Sombra elegante */
-    z-index: 9999; /* Asegura que esté siempre encima de todo */
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.btn-whatsapp-flotante img {
-    width: 35px; /* Tamaño del icono dentro del botón */
-    height: 35px;
-    object-fit: contain;
-}
-
-.btn-whatsapp-flotante:hover {
-    transform: scale(1.1); /* Efecto de crecimiento al pasar el mouse */
-    background-color: #20ba5a; /* Un verde un poco más oscuro al hacer hover */
-}
+    padding:
