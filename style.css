@@ -410,37 +410,36 @@ footer {
 }
 
 
-/* --- BOTÓN FLOTANTE DE WHATSAPP (Global Corregido) --- */
-.btn-whatsapp-flotante {
+/* Botón flotante de WhatsApp */
+.whatsapp-flotante {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #25d366; /* Color verde WhatsApp */
-    color: white;
     width: 60px;
     height: 60px;
-    border-radius: 50%; /* Círculo perfecto */
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Sombra */
-    z-index: 9999;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.btn-whatsapp-flotante img {
-    width: 35px; /* Tamaño del icono blanco */
-    height: 35px;
-    object-fit: contain;
-    /* IMPORTANTE: La imagen no debe tener fondo de color ni bordes */
-}
-
-.btn-whatsapp-flotante:hover {
-    transform: scale(1.1); /* Efecto al pasar el mouse */
+.whatsapp-flotante:hover {
+    transform: scale(1.1);
     background-color: #20ba5a;
 }
 
-
+.icono-wsp {
+    width: 35px;
+    height: 35px;
+    fill: white;
+}
 /* --- VENTANA MODAL DE RESERVA --- */
 .modal-overlay {
     position: fixed;
