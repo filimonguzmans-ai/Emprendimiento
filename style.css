@@ -292,3 +292,9 @@ main img {
     height: auto;
     object-fit: contain;
 }
+.imagen-producto {
+    max-width: 350px; /* O el ancho máximo que prefieras para tus fotos */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
